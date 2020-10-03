@@ -1,0 +1,111 @@
+
+/* for add button */
+
+#btnadd,#btnSh,#btnshowRes,#btnaddF,#btnadduser,#btnadduser1,#btnrefrech,#btnaddModule,#addO,#searchO,#referchO,#btnadd211,#btnadd2,#btnsearch211,#btnadd21,#refrech211,#btnsearch21,#refrech21,#btnadd1,#addN,#addS,#refrech2,#searchbtn,#loginP,#btnsearch2 {
+    -fx-background-color: white; 
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 5px;
+}
+
+
+
+
+#addN:hover,#btnSh:hover,#btnshowRes:hover,#btnaddF:hover,#btnadduser:hover,#btnadduser1:hover,#btnrefrech:hover,#btnaddModule:hover,#addO:hover,#searchO:hover,#referchO:hover,#btnadd211:hover,#btnsearch211:hover,#btnadd1:hover,#refrech211:hover,#btnadd21:hover,#refrech21:hover,#btnsearch21:hover,#btnadd:hover,#btnadd2:hover,#btnsearch2:hover,#refrech2:hover,#searchbtn:hover,#loginP:hover,#rt:hover {
+    -fx-background-color: #008CBA;
+    -fx-color: white;
+    -fx-border-radius: 5px;
+}
+
+
+
+/* for update button */
+
+#btnUpdate,#btnupdateF,#btnupdateuser,#btnupdateuser1,#btnupdateModule,#btnupdate,#updatN,#updatM,#updatS,#updatSn,#payS {
+    -fx-background-color: white; 
+    -fx-border-color: #4CAF50;
+    -fx-border-radius: 5px;
+}
+
+
+
+#btnUpdate:hover,#btnupdateF:hover,#btnupdateuser:hover,#btnupdateuser1:hover,#btnupdateModule:hover,#btnupdate:hover,#updatN:hover,#updatM:hover,#updatS:hover,#updatSn:hover,#payP:hover,#payS:hover {
+    -fx-background-color: #4CAF50;
+    -fx-color: white;
+    -fx-border-radius: 5px;
+}
+
+
+/* for search button  */ 
+
+#btnsearch,#btnsearch1{
+    -fx-background-color: white; 
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 5px;
+}
+
+
+#btnsearch:hover,#btnsearch1:hover {
+    -fx-background-color: #008CBA;
+    -fx-color: white;
+    -fx-border-radius: 5px;
+}
+
+
+/* for refrech */
+
+#refrech,#refrech1,#btnrefrechusers,#btnrefrechusers1,#btnrefrechF{
+    -fx-background-color: white; 
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 5px;
+}
+
+#refrech:hover,#refrech1:hover,#btnrefrechusers:hover,#btnrefrechusers1:hover,#btnrefrechF:hover{
+    -fx-background-color: #008CBA;
+    -fx-color: white;
+    -fx-border-radius: 5px;
+}
+
+
+/* for  delete button */
+
+#btnDelete,#btndeleteF,#btndeleteuser,#btndeleteuser1,#btndeleteModule,#btndelete,#delO,#deleteN,#deleteM,#deleteS,#deleteSn{
+    -fx-background-color: white; 
+    -fx-border-color: #f44336;
+    -fx-border-radius: 5px;
+}
+
+#btnDelete:hover,#btndeleteF:hover,#btndeleteuser:hover,#btndeleteuser1:hover,#btndeleteModule:hover,#btndelete:hover,#delO:hover,#deleteN:hover#deleteM:hover,#deleteS:hover,#deleteS:hover,#deleteSn:hover {
+    -fx-background-color: #f44336;
+    -fx-color: white;
+    -fx-border-radius: 5px;
+}
+
+/* setting  of image */
+
+#image{
+    -fx-border-radius: 50px;
+}
+
+/* next prevois button */
+
+#next,#previos {
+    -fx-background-color: white; 
+    -fx-border-color: #008CBA;
+    -fx-border-radius: 5px;
+}
+
+#next:hover,#previos:hover {
+    -fx-background-color: #008CBA;
+    -fx-color: white;
+    -fx-border-radius: 5px;
+}
+
+
+#prixP{
+    -fx-font-family: Tahoma;
+    -fx-font-size: 30;
+    -fx-background-color: #171717;
+    -fx-text-inner-color: #009900;
+}
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="GestionMoyennes.jnlp">
+  <information>
+    <title>GestionMoyennes</title>
+    <vendor>zed</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="GestionMoyennes.jar" size="43649" download="eager" />
+    <jar href="lib/controlsfx-8.0.1-samples.jar" size="94017" download="eager" />
+    <jar href="lib/controlsfx-8.0.1-sources.jar" size="262445" download="eager" />
+    <jar href="lib/controlsfx-8.40.16.jar" size="1416162" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.2.jar" size="637439" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="GestionMoyennes" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="gestionmoyennes.GestionMoyennes"  name="GestionMoyennes" />
+  <update check="always"/>
+</jnlp>

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="589.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionmoyennes.FXMLDocumentController">
+    <children>
+      <TabPane fx:id="tabPane" accessibleRole="DATE_PICKER" blendMode="SRC_ATOP" cache="true" layoutX="4.0" layoutY="9.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="615.0" prefWidth="909.0" rotateGraphic="true" stylesheets="@../../../Transport/src/Styles/tabPaneStyle.css" tabClosingPolicy="UNAVAILABLE" tabMinWidth="10.0">
+         <tabs>
+            <Tab fx:id="pane1" onSelectionChanged="#loadSpeciality" text="specialities">
+               <content>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="910.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="115.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="94.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="10.0" prefWidth="174.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="101.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="171.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label text="name">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="name" onKeyReleased="#searchSpeciality" GridPane.columnIndex="2" />
+                        <Label text="ID" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="ID" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button fx:id="btnadd" mnemonicParsing="false" onAction="#addSpeciality" prefHeight="32.0" prefWidth="156.0" stylesheets="@../style/style.css" text="add" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btnsearch" mnemonicParsing="false" onAction="#refrechSp" prefHeight="32.0" prefWidth="155.0" stylesheets="@../style/style.css" text="refrech" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <TableView fx:id="tableSp" onMouseClicked="#showSpeciality" prefHeight="330.0" prefWidth="643.0" GridPane.columnSpan="5" GridPane.rowIndex="4" GridPane.rowSpan="3">
+                           <columns>
+                              <TableColumn fx:id="nameColumn" prefWidth="362.0" text="name" />
+                              <TableColumn fx:id="IDColumn" minWidth="50.0" prefWidth="351.0" resizable="false" text="ID" />
+                           </columns>
+                           <GridPane.margin>
+                              <Insets left="50.0" right="-100.0" />
+                           </GridPane.margin>
+                        </TableView>
+                        <Button fx:id="btnupdate" mnemonicParsing="false" onAction="#updateSpeciality" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="update" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Button fx:id="btndelete" mnemonicParsing="false" onAction="#deleteSpeciality" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="delete" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="pane2" onSelectionChanged="#loadModule" text="modules">
+               <content>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="910.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="115.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="10.0" prefWidth="174.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="101.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="138.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="273.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="27.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="155.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="90.0" text="coefficient" textAlignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="coefficient" prefHeight="26.0" prefWidth="199.0" GridPane.columnIndex="1" />
+                        <Label text="name" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="nameModule" onKeyReleased="#searchModule" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="ID" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="IDModule" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button fx:id="btnaddModule" mnemonicParsing="false" onAction="#addModule" prefHeight="32.0" prefWidth="156.0" stylesheets="@../style/style.css" text="Ajouter" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btnupdateModule" mnemonicParsing="false" onAction="#updateModule" prefHeight="32.0" prefWidth="155.0" stylesheets="@../style/style.css" text="update" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <TableView fx:id="tableM" onMouseClicked="#showModule" prefHeight="280.0" prefWidth="811.0" stylesheets="@../../../Transport/src/Styles/tableStyle.css" GridPane.columnSpan="5" GridPane.rowIndex="5" GridPane.rowSpan="3">
+                           <columns>
+                              <TableColumn fx:id="cofColumn" prefWidth="192.0" text="coefficient" />
+                              <TableColumn fx:id="nameModuleColumn" minWidth="50.0" prefWidth="184.0" resizable="false" text="name module" />
+                              <TableColumn fx:id="semmesterColumn" minWidth="50.0" prefWidth="154.0" resizable="false" text="semesster" />
+                              <TableColumn fx:id="SpyColumn" minWidth="50.0" prefWidth="155.0" resizable="false" text="specialty" />
+                              <TableColumn fx:id="IDModuleColumn" maxWidth="336.0" minWidth="-Infinity" prefWidth="136.0" resizable="false" text="ID" />
+                           </columns>
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin>
+                        </TableView>
+                        <Button fx:id="btndeleteModule" mnemonicParsing="false" onAction="#deleteModule" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="delete" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label text="semesster" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="cmbSpecialty" text="specialty" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <ComboBox fx:id="cmbSpy" prefHeight="26.0" prefWidth="204.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="cmbsemestter" prefHeight="26.0" prefWidth="204.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button fx:id="btnrefrech" layoutX="455.0" layoutY="142.0" mnemonicParsing="false" onAction="#refrechModule" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="refrech" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="pane21" onSelectionChanged="#loadTeacher" text="teachers">
+               <content>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="910.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="115.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="10.0" prefWidth="174.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="101.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="138.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="273.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="27.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="155.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="90.0" text="first name" textAlignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="firstname" prefHeight="26.0" prefWidth="199.0" GridPane.columnIndex="1" />
+                        <Label text="last name" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="lastname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="IDuser" text="ID" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="btnadduser" mnemonicParsing="false" onAction="#addUser" prefHeight="32.0" prefWidth="156.0" stylesheets="@../style/style.css" text="Ajouter" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btnupdateuser" mnemonicParsing="false" onAction="#updteUser" prefHeight="32.0" prefWidth="155.0" stylesheets="@../style/style.css" text="update" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <TableView fx:id="tableU" onMouseClicked="#showTeacher" prefHeight="280.0" prefWidth="811.0" stylesheets="@../../../Transport/src/Styles/tableStyle.css" GridPane.columnSpan="5" GridPane.rowIndex="5" GridPane.rowSpan="3">
+                           <columns>
+                              <TableColumn fx:id="firstnameColumn" prefWidth="192.0" text="first name" />
+                              <TableColumn fx:id="lastnameColumn" minWidth="50.0" prefWidth="219.0" resizable="false" text="last name" />
+                              <TableColumn fx:id="matColumn" minWidth="50.0" prefWidth="201.0" resizable="false" text="matrucula" />
+                              <TableColumn fx:id="IDUColumn" minWidth="50.0" prefWidth="214.0" resizable="false" text="ID " />
+                           </columns>
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin>
+                        </TableView>
+                        <Button fx:id="btndeleteuser" mnemonicParsing="false" onAction="#deleteUser" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="delete" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Button fx:id="btnrefrechusers" layoutX="455.0" layoutY="142.0" mnemonicParsing="false" onAction="#refrechUser" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="refrech" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <TextField fx:id="mat" layoutX="125.0" layoutY="89.0" onKeyReleased="#searchUser" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="matrucula" GridPane.rowIndex="2">
+                           <opaqueInsets>
+                              <Insets left="30.0" />
+                           </opaqueInsets>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="IdUser" disable="true" layoutX="125.0" layoutY="145.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="pane211" onSelectionChanged="#loadStudent" text="students">
+               <content>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="910.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="115.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="10.0" prefWidth="174.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="101.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="138.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="273.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="27.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="155.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="90.0" text="first name" textAlignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="firstname1" prefHeight="26.0" prefWidth="199.0" GridPane.columnIndex="1" />
+                        <Label text="last name" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="lastname1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="IDuser1" text="ID" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="btnadduser1" mnemonicParsing="false" onAction="#addUser1" prefHeight="32.0" prefWidth="156.0" stylesheets="@../style/style.css" text="Ajouter" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btnupdateuser1" mnemonicParsing="false" onAction="#updteUser1" prefHeight="32.0" prefWidth="155.0" stylesheets="@../style/style.css" text="update" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <TableView fx:id="tableU1" onMouseClicked="#showTeacher1" prefHeight="280.0" prefWidth="811.0" stylesheets="@../../../Transport/src/Styles/tableStyle.css" GridPane.columnSpan="5" GridPane.rowIndex="5" GridPane.rowSpan="3">
+                           <columns>
+                              <TableColumn fx:id="firstnameColumn1" prefWidth="192.0" text="first name" />
+                              <TableColumn fx:id="lastnameColumn1" minWidth="50.0" prefWidth="219.0" resizable="false" text="last name" />
+                              <TableColumn fx:id="matColumn1" minWidth="50.0" prefWidth="201.0" resizable="false" text="matrucula" />
+                              <TableColumn fx:id="IDUColumn1" minWidth="50.0" prefWidth="214.0" resizable="false" text="ID " />
+                           </columns>
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin>
+                        </TableView>
+                        <Button fx:id="btndeleteuser1" mnemonicParsing="false" onAction="#deleteUser1" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="delete" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Button fx:id="btnrefrechusers1" layoutX="455.0" layoutY="142.0" mnemonicParsing="false" onAction="#refrechUser1" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="refrech" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <TextField fx:id="mat1" layoutX="125.0" layoutY="89.0" onKeyReleased="#searchUser1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="matrucula" GridPane.rowIndex="2">
+                           <opaqueInsets>
+                              <Insets left="30.0" />
+                           </opaqueInsets>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="IdUser1" disable="true" layoutX="125.0" layoutY="145.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button fx:id="btnshowRes" disable="true" layoutX="455.0" layoutY="201.0" mnemonicParsing="false" onAction="#showResult" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="average notes" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="pane2111" onSelectionChanged="#loadFollows" text="follow">
+               <content>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="910.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="115.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="10.0" prefWidth="174.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="187.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="174.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="216.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="27.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="155.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <children>
+                        <Label fx:id="student" prefHeight="18.0" prefWidth="90.0" text="student" textAlignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="studentN" prefHeight="26.0" prefWidth="199.0" GridPane.columnIndex="1" />
+                        <Label text="teacher" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="teacherT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="IDuser11" text="ID" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="30.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Button fx:id="btnaddF" mnemonicParsing="false" onAction="#btnaddF" prefHeight="32.0" prefWidth="156.0" stylesheets="@../style/style.css" text="Ajouter" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btnupdateF" mnemonicParsing="false" onAction="#updateFollow" prefHeight="32.0" prefWidth="155.0" stylesheets="@../style/style.css" text="update" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <TableView fx:id="tableF" onMouseClicked="#showFollows" prefHeight="268.0" prefWidth="900.0" stylesheets="@../../../Transport/src/Styles/tableStyle.css" GridPane.columnSpan="6" GridPane.rowIndex="5" GridPane.rowSpan="3">
+                           <columns>
+                              <TableColumn fx:id="studentNColumn" prefWidth="138.0" text="student" />
+                              <TableColumn fx:id="teacherTColumn" minWidth="50.0" prefWidth="127.0" resizable="false" text="teacher" />
+                              <TableColumn fx:id="cmbModuleColumn" minWidth="50.0" prefWidth="125.0" resizable="false" text="module" />
+                              <TableColumn fx:id="TDColumn" minWidth="50.0" prefWidth="95.0" resizable="false" text="TD" />
+                              <TableColumn fx:id="examenColumn" minWidth="50.0" prefWidth="105.0" resizable="false" text="examen " />
+                              <TableColumn fx:id="avaregeColumn" minWidth="39.0" prefWidth="168.0" resizable="false" text="avarege " />
+                              <TableColumn fx:id="IDFColumn" minWidth="50.0" prefWidth="147.0" resizable="false" text="ID" />
+                           </columns>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TableView>
+                        <Button fx:id="btndeleteF" mnemonicParsing="false" onAction="#deleteFollow" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="delete" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="btnrefrechF" layoutX="455.0" layoutY="142.0" mnemonicParsing="false" onAction="#refrechFollow" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="refrech" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Label text="module" GridPane.rowIndex="2">
+                           <opaqueInsets>
+                              <Insets left="30.0" />
+                           </opaqueInsets>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="IdF" disable="true" layoutX="125.0" layoutY="145.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cmbModule" prefHeight="26.0" prefWidth="204.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label layoutX="40.0" layoutY="39.0" prefHeight="18.0" prefWidth="90.0" text="TD note" textAlignment="CENTER" GridPane.columnIndex="2">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="TD" layoutX="125.0" layoutY="30.0" onKeyReleased="#calculAvrege0" prefHeight="26.0" prefWidth="199.0" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label layoutX="328.0" layoutY="34.0" prefHeight="18.0" prefWidth="126.0" text="examen note" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="examen" layoutX="460.0" layoutY="30.0" onKeyReleased="#calculAvrege1" prefHeight="26.0" prefWidth="199.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label layoutX="328.0" layoutY="93.0" prefHeight="18.0" prefWidth="159.0" text="avarege Module" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="avarege" disable="true" layoutX="501.0" layoutY="89.0" prefHeight="26.0" prefWidth="199.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Button fx:id="btnsearch" layoutX="679.0" layoutY="206.0" mnemonicParsing="false" onAction="#searchFollow" prefHeight="32.0" prefWidth="159.0" stylesheets="@../style/style.css" text="search" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+         </tabs>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TabPane>
+    </children>
+</AnchorPane>
